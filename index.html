@@ -64,7 +64,6 @@
         <button class="btn btn-prev" id="prevBtn">&#10094; Anterior</button>
         
         <div class="carousel-slide" id="slide">
-            
             <img src="https://cdn.motor1.com/images/mgl/Zqvqy/s1/4x3/apollo-intensa-emozione.webp" alt="Imagen 1">
             <img src="https://d1gl66oyi6i593.cloudfront.net/wp-content/uploads/2022/01/superdeportivos-baratos-9.jpg" alt="Imagen 2">
             <img src="https://www.elcarrocolombiano.com/wp-content/uploads/2026/10/20261016-PORSCHE-MISSION-S-CONCEPT-2026-01.jpg" alt="Imagen 3">
@@ -80,17 +79,15 @@
         const nextBtn = document.getElementById('nextBtn');
 
         let counter = 0;
-        const size = images[0].clientWidth; 
 
-        
         function updateSlide() {
-            
+            const currentSize = images[0].clientWidth;
             slide.style.transform = 'translateX(' + (-currentSize * counter) + 'px)';
         }
 
         nextBtn.addEventListener('click', () => {
             if (counter >= images.length - 1) {
-                counter = 0; // Vuelve al inicio
+                counter = 0; 
             } else {
                 counter++;
             }
@@ -99,7 +96,8 @@
 
         prevBtn.addEventListener('click', () => {
             if (counter <= 0) {
-                counter = images.length - 1; // Va al final
+                
+                counter = images.length - 1;
             } else {
                 counter--;
             }
